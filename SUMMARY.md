@@ -17,7 +17,7 @@
 ### Advanced Networking (SP)
 
 * [1 - Notes]()
-* [⭐️2 - Networking refresher](advanced-networking/2-networking-refresher.md)
+* [☑️ 2 - Networking refresher](advanced-networking/2-networking-refresher.md)
 * [⭐️3 - Implement AWS networks]()
 * [4 - Hybrid networks]()
 * [5 - Network integrations]()
