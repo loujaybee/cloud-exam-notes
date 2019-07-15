@@ -6,9 +6,9 @@
 ### SysOps Associate
 
 * [ ✅ 1 - Prior Art ](./sysops-associate/1-priorart.md)
-* [ ️️☑️ 2 - Monitoring ](./sysops-associate/2-monitoring.md)
-* [ ☑️ 3 - Provisioning ](./sysops-associate/3-provisioning.md)
-* [ ☑️ 4 - High Availability ](./sysops-associate/4-elasticity-and-scale.md)
+* [ ️️✅ 2 - Monitoring ](./sysops-associate/2-monitoring.md)
+* [ ✅ 3 - Provisioning ](./sysops-associate/3-provisioning.md)
+* [ ✅ 4 - High Availability ](./sysops-associate/4-elasticity-and-scale.md)
 * [ 🔵 5 - Storage & Data Management ]()
 * [ 🔵 6 - Security & Compliance ]()
 * [ 🔵 7 - Networking ](./sysops-associate/7-networking.md)
