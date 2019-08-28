@@ -5,6 +5,7 @@
 ### Custom vs Out-Of-The-Box Metrics
 - Standard metric time for EC2 cloudwatch metrics is 5 minutes
 - Detailed monitoring is 1 minute
+- High resolution monitoring allows faster resolution (can be as low as 1 second)
 
 ### The 4 CloudWatch metrics you get out of the box
 - CPU

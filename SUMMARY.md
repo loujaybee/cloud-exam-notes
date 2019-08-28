@@ -1,24 +1,25 @@
-
 #### The AWS Big 7
 
 * [ 🏠Home ](README.md)
 
 ### SysOps Associate
 
+* [ Exam Prep ](./sysops-associate/exam-prep.md)
+* [ Extra Reading ](./sysops-associate/extra-reading.md)
 * [ ✅ 1 - Prior Art ](./sysops-associate/1-priorart.md)
 * [ ️️✅ 2 - Monitoring ](./sysops-associate/2-monitoring.md)
 * [ ✅ 3 - Provisioning ](./sysops-associate/3-provisioning.md)
 * [ ✅ 4 - High Availability ](./sysops-associate/4-elasticity-and-scale.md)
-* [ 🔵 5 - Storage & Data Management ]()
-* [ 🔵 6 - Security & Compliance ]()
-* [ 🔵 7 - Networking ](./sysops-associate/7-networking.md)
+* [ ☑️ 5 - Storage & Data Management ](./sysops-associate/5-storage.md)
+* [ ☑️  6 - Security & Compliance ](./sysops-associate/6-security.md)
+* [ ☑️ 7 - Networking ](./sysops-associate/7-networking.md)
 * [ ☑️ 8 - Automation ](./sysops-associate/8-automation.md)
 
 ### Advanced Networking (SP)
 
 * [🔵 1 - Notes]()
 * [☑️ 2 - Networking refresher](advanced-networking/2-networking-refresher.md)
-* [⭐️ 3 - Implement AWS networks]()
+* [️☑️ 3 - Implement AWS networks](advanced-networking/3-design-and-implement-aws-networks.md)
 * [🔵 4 - Hybrid networks]()
 * [🔵 5 - Network integrations]()
 * [🔵 6 - Network troubleshooting]()
@@ -55,3 +56,9 @@
 * [🔵 5 - Evaluating your design]()
 
 ### Docker Fundamentals (PRO)
+
+### Key
+
+* ✅ — Done!
+* ☑️ — In Progress
+* 🔵 — For Later

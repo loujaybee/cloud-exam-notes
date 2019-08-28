@@ -7,9 +7,7 @@ How I'm marking which modules to do next:
 
 * ✅ — Done!
 * ☑️ — Written up, but not formatted
-* 1️⃣ — Important & Urgent
-* 2️⃣ — Important, Not Urgent
-* 3️⃣ — Not Important, Not Urgent
+* 🔵 — For Later
 
 ## Course Overview
 
