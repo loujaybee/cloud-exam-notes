@@ -115,26 +115,34 @@ Or divide in four:
 You can do this subnet splitting all the way down ( 🐢🐢🐢 )
 
 ### Route Tables (Supernetting)
-
 - A route table links networks to one another (next hop)
 - You can hardcode _static_ IP's to the route table or you can use _dynamic_ addressing (through various algorithms)
 - If address not found it goes to default route (0.0.0.0) and hops out of the network
 - *Supernetting* allows multiple route table entries to be grouped together to avoid duplicated entries
 
 ### Network Address Translation
-
 - A NAT maps publically available addresses to internal addresses
 - Allows you to share a public IP amongst many internal IP's
+- NAT Gateways are stateful so remember the outgoing requests and can map return traffic
 - Home routers use NAT to link your network (local) to public
 
 ### VLAN
-
 - Logically group together machines on a network so they can communicate across a network that has _physical_ access to all other machines
 - VLAN's are implemented in the packet routing devices (such as switches or trunks)
 - VLANS ensure that only certain computers can talk to each other
 
-## Questions
+### DNS Basics
+- TLD's are governed by IANA
+- Nominet handles the UK domains
+- DNS operates an inverted tree structure (root servers, ~300)
+- Root servers are accessed via Anycast
+- Authoritative servers have the current up to date information
+- Some servers are purely cache, not authoritative
+- TTL is a suggsetion, not a mandate
+- A recursive query is one that is resolved by the server on the requestors behalf
 
+
+## Questions
 - How are netmasks passed as part of the IP protocol?
 - What is the broadcast / network address?
 - Why are broadcast / network addresses the same IP's?
@@ -144,3 +152,5 @@ You can do this subnet splitting all the way down ( 🐢🐢🐢 )
 - How does supernetting really work?
 - How does NAT translation work (where is the tag stored in the frame/packet)?
 - Is a trunk a physical device? Why use one instead of a switch etc?
+- What is Anycast?
+- Research recursive vs non-recursive DNS look ups

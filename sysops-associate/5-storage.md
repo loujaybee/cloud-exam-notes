@@ -26,8 +26,17 @@
 * Can enable MFA delete to protect delete of S3 resources
 * Encryption in transit (SSL / TLS)
 
+## Encrypting S3
+* Encryption at rest is provided by:
+    * SSE-S3 (Server Side Encryption - S3)
+    * SSE-KMS (Server Side Encryption with KMS)
+* When you enable on an existing bucket:
+    * No change to existing objects
+    * Encrypts by default
+    * If you put encryption info in the header it is used
+
 ## Instance Store
-* Data is ephemeral
+* Used as block storage
 
 ## KMS
 * KMS and CloudHSM generate, store and manage secrets / keys.
@@ -42,3 +51,4 @@
 * S3 as NFS vs EBS (what's the cost/benefits)
 * What is CloudHSM
 * What is Storage Gateway?
+* What is the difference between block storage and other types of storage?
