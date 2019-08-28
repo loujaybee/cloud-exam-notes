@@ -1,13 +1,10 @@
 
-
-## EC2 MONITORING
-
-### Custom vs Out-Of-The-Box Metrics
+### EC2 Custom vs Out-Of-The-Box Metrics
 - Standard metric time for EC2 cloudwatch metrics is 5 minutes
 - Detailed monitoring is 1 minute
 - High resolution monitoring allows faster resolution (can be as low as 1 second)
 
-### The 4 CloudWatch metrics you get out of the box
+### EC2 CloudWatch metrics out-of-the-box
 - CPU
 - Network
 - Disk
@@ -34,9 +31,7 @@
     - No virtualisation with other tenants
     - Good for certain licenses (Oracle)
 
-## EBS Monitoring
-
-### The Four Volume Types
+### EBS, The 4 Volume Types
 - Solid State Drives (They’re expensive, but much quicker)
 - GP2
     - Is a general purpose volume (generic use cases)
@@ -58,21 +53,18 @@
     - Has a lower storage cost
 
 ### EBS Volume Pre-Warming
-
 - Pre-warming is an optimisation to prevent cold access of EBS blocks
 - There is no need to warm EBS any more unless you’re restoring from S3, where you may want to pre-warm as each accessed block will have a “first touch penalty”.
     - You can warm EBS with a bash command that touches all files internally
     - Use the dd or fio command and read all files to /dev/null as a pre-warming process.
 
 ### EBS Cloudwatch
-
 - Read/Writeops (I/O operations per second)
     - Amount of IOPS per second
 - Queue length
     - You really don’t want anything queuing
 
 ### The Four EBS Volume Statuses
-
 - OK — Volume is running fine
 - Warning — Degraded performance, pushing to queue?
 - Impaired — Not working, maybe I/O is disabled?
@@ -80,16 +72,13 @@
 
 **Applying changes:** When you modify block storage, you might need to adjust your OS to see the higher volume size. You can also apply changes whilst the EBS is running.
 
-
-## ELB Monitoring
-
-### ELB overview
+### ELBs
 - ELB have listeners (for connections using defined protocol and ports)
 - Register health checks on the ELB to ensure that service health (before routing)
 - You can load balance across regular instances and serverless
 - By default load balancers distribute across specified AZ’s
 
-### The Types of ELB
+### Types of ELB
 - Application Load Balancer
     - Supports path based routing
     - Can forward requests with modified headers (operates at application level)
@@ -102,27 +91,21 @@
     - Supports sticky sessions (using app generated cookies)
 - Ephemeral ports?
 
-# Monitoring ELB
-- Cloud Watch
-    - App 4/5xx’s
-    - Healthy hosts count
+### Monitoring ELB
+- Cloud Watch (for 4/5xx’s, healthy hosts count)
 - Access Logs (are disabled by default)
-    - Dumps to S3
-    - Can be hard (require 3rd party tool)
-    - They’re good because they can access data after an ELB scales down
+    - They dump to S3 so can be hard to analyse (require 3rd party tool)
 - Request Tracing
+    - They’re good because they can access data after an ELB scales down
     - Adds a header to requests before sending on (so they can be correlated)
-
-## CloudWatch (General)
 
-### Custom Dashboards
+### Cloudwatch Dashboards
 - Dashboards aren’t regional specific
     - Can add lines, stacks, numbers and charts
 - View data usage, memory
 - Remember to save your dashboard
 
 ### Creating a Billing Alarm
-
 - You can setup a threshold when you want to be alerted
 - Create people who are to be alerted
 
@@ -133,10 +116,8 @@
     - Allows you to see what changes have been made to the AWS API
 - Config
     - Records the state of AWS environments
-
-## ElastiCache Monitoring
 
-### The 3 Metrics
+### Elasticache monitoring metrics
 - CPU utilisation
 - Swap usage
     - You don’t want to be using the swap file
@@ -147,7 +128,6 @@
     - Find out if you are not releasing connections properly (assumed same as RDS)
 
 ### AWS Organisations
-
 - Purpose of AWS orgs
 - AWS Organisations allow you to manage multiple AWS accounts
 - You can apply policies to your organisation that allow you to control access to AWS accounts
@@ -161,20 +141,16 @@
 - Resource groups are groups of tagged resources
 - AWS systems manager
 
-
-## AWS Config
-
-### What is AWS Config?
-- Management tool
+### AWS Config?
+- Is a management tool that records configuration changes
 - Is regional (needs to be turned on a per region basis)
-- Records configuration changes
 - Can schedule a lambda to be triggered on config change
-- Config is a way of recording your AWS environments (config management)
 - Pipes results into S3 for analysis later
 - Can trigger periodically or on change
 - You can have up to 40 managed rules
 - Config needs read access to resources it’s tracking
 - Needs publish access to SNS to trigger notifications
 
-AWS Config FAQs
-https://aws.amazon.com/config/faq/
+### Questions
+* What is AWS Config?
+* Read: https://aws.amazon.com/config/faq/
