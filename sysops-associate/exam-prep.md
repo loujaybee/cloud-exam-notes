@@ -21,8 +21,20 @@ Lots of overlap with solutions architect
 ## Things To Do
 
 - Research WhizLabs
-- Who is Jon Bonso?
-- Udemy practice tests for the sysops exam
+- Who is Jon Bonso? - Udemy practice tests for the sysops exam
 
+## Exercises:
 
+Review the ACloudGuru labs: https://learn.acloud.guru/labs/search
 
+**Create a VPC** — Launch up a new VPC, create an internet gateway, setup security groups, launch some EC2 in public and private networks.
+
+**Setup a bastion host** and SSH'ing through the network.
+
+**Setup KMS** And integrate it with real services.
+
+**Experiment with load balancers** — When you've created a new VPC, implement a web app behind a load balancer.
+
+**Setup location routing** - Add DNS records that resolve based on location.
+
+**Teraform Wordpress** — Setup a new wordpress installation with route53, S3 CDN, EBS volumes (with backups) and the PHP EC2 and database, migrate content over.

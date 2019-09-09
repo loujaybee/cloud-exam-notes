@@ -12,7 +12,7 @@
 
 **Note:** RAM is a custom metric
 
-### Setting up a Custom Metric
+### Setting up a Custom EC2 Metric
 - Install the cloudwatch agent on your machine (using user data startup script)
 - You use a user data script to configure your EC2
 - User data scripts must provider their interpreter (Use a shebang (#!/bin/bash)
@@ -154,3 +154,6 @@
 ### Questions
 * What is AWS Config?
 * Read: https://aws.amazon.com/config/faq/
+* How to setup a billing alarm?
+* Understand resource groups better
+* Understand AWS config better
