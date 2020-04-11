@@ -1,0 +1,14 @@
+{
+  "name": "cloud-exam-notes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Lou Bichard <contact@louisjohnbichard.co.uk>",
+  "license": "MIT",
+  "scripts": {
+    "build": "gitbook build . docs && open ./_book/index.html",
+    "serve": "gitbook serve"
+  },
+  "dependencies": {
+    "gitbook-cli": "^2.3.2"
+  }
+}
