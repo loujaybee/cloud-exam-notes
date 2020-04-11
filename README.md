@@ -18,15 +18,9 @@ How I'm marking which modules to do next:
 
 ## Progress
 
-ELAPSED MONTHS: **5**
-
-- <s>March 2019</s>
-- <s>April 2019</s>
-- <s>May 2019</s>
-- <s>June 2019</s>
-- <s>July 2019</s>
-- August 2019
-- September 2019
-- October 2019
-- November 2019
-- December 2019
+* ✅ Cloud Practitioner: 1st May 2020
+* ✅ SysOps Associate: 1st June 2020
+* 🔵 Developer Associate: 1st August 2020
+* 🔵 Systems Architect Associate: 1st September 2020
+* 🔵 DevOps Professional: ...
+* 🔵 Systems Architect Professional: ...
