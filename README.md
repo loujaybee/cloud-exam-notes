@@ -18,9 +18,9 @@ How I'm marking which modules to do next:
 
 ## Progress
 
-✅ Cloud Practitioner: 1st May 2020
-✅ SysOps Associate: 1st June 2020
-🔵 Developer Associate: 1st August 2020
-🔵 Systems Architect Associate: 1st September 2020
-🔵 DevOps Professional: ...
-🔵 Systems Architect Professional: ...
+* ✅ Cloud Practitioner: 1st May 2020
+* ✅ SysOps Associate: 1st June 2020
+* 🔵 Developer Associate: 1st August 2020
+* 🔵 Systems Architect Associate: 1st September 2020
+* 🔵 DevOps Professional: ...
+* 🔵 Systems Architect Professional: ...
