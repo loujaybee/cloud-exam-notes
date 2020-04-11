@@ -11,7 +11,7 @@
 - Aurora allows elasticity (regular RDS does not)
 
 ### RDS Replica Vs Multiple AZ
-Worth calling out on it’s own. Read replica’s are to help with additional read load whereas multiple AZ is to help with disaster recover.
+- Worth calling out on it’s own. Read replica’s are to help with additional read load whereas multiple AZ is to help with disaster recover.
 
 ### RDS & Multi AZ Failover
 - Backups are taken from a secondary if you’ve got multiple AZ turned on.

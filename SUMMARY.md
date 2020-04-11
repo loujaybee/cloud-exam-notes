@@ -1,6 +1,26 @@
 * [ 🏠Home ](README.md)
 * [ Contents ](SUMMARY.md)
 
+### Cloud Practicioner
+
+* [🔵 1 - Intro ](./cloud-practitioner/1-intro.md)
+* [🔵 2 - Cloud Concepts](./cloud-practitioner/2-cloud-concepts.md)
+* [🔵 3 - Billing & Pricing](./cloud-practitioner/3-billing-and-pricing.md)
+* [🔵 4 - Security In The Cloud](./cloud-practitioner/4-security-cloud.md)
+
+### SysOps Associate
+
+* [ Exam Prep ](./sysops-associate/exam-prep.md)
+* [ Extra Reading ](./sysops-associate/extra-reading.md)
+* [ ✅ 1 - Prior Art ](./sysops-associate/1-priorart.md)
+* [ ️️✅ 2 - Monitoring ](./sysops-associate/2-monitoring.md)
+* [ ✅ 3 - Provisioning ](./sysops-associate/3-provisioning.md)
+* [ ✅ 4 - High Availability ](./sysops-associate/4-elasticity-and-scale.md)
+* [ ✅ 5 - Storage & Data Management ](./sysops-associate/5-storage.md)
+* [ ✅️ 6 - Security & Compliance ](./sysops-associate/6-security.md)
+* [ ✅ 7 - Networking ](./sysops-associate/7-networking.md)
+* [ ️✅ 8 - Automation ](./sysops-associate/8-automation.md)
+
 ### Developer Associate
 
 * [🔵 1 - Notes]()
@@ -14,19 +34,6 @@
 * [🔵 9 - Developer Theory]()
 * [⭐️ 10 - Advanced IAM]()
 * [🔵 11 - Monitoring]()
-
-### SysOps Associate
-
-* [ Exam Prep ](./sysops-associate/exam-prep.md)
-* [ Extra Reading ](./sysops-associate/extra-reading.md)
-* [ ✅ 1 - Prior Art ](./sysops-associate/1-priorart.md)
-* [ ️️✅ 2 - Monitoring ](./sysops-associate/2-monitoring.md)
-* [ ✅ 3 - Provisioning ](./sysops-associate/3-provisioning.md)
-* [ ✅ 4 - High Availability ](./sysops-associate/4-elasticity-and-scale.md)
-* [ ✅ 5 - Storage & Data Management ](./sysops-associate/5-storage.md)
-* [ ✅️  6 - Security & Compliance ](./sysops-associate/6-security.md)
-* [ ✅ 7 - Networking ](./sysops-associate/7-networking.md)
-* [ ️✅ 8 - Automation ](./sysops-associate/8-automation.md)
 
 ### Solutions Architect Associate
 

@@ -1,9 +1,10 @@
 
 ## Provisioning an EC2
+
 - Choose an AMI: Redhat, Window, Pre-Installed Binaries
 - Choose a VPC: One is setup as the default.
 - Choosing a placement group: Allows you to physically locate machines near each other.
-Assign IAM roles: Give access to resources
+- Assign IAM roles: Give access to resources
 
 ### EC2 States
 - Stopping vs Hibernating
@@ -36,14 +37,17 @@ Assign IAM roles: Give access to resources
 Allows you to run start up scripts for your machine
 
 ### Volume Mounting
-Can mount a volume
+
+- Can mount a volume
 
 ### Security Groups
-Firewall rules
-Decide on traffic in and out of an instance
+
+- Firewall rules
+- Decide on traffic in and out of an instance
 
 ### Launch Log
-Not too sure what this is?
+
+- Not too sure what this is?
 
 ### EC2 Launch Issues
 - InstanceLimitExceeded
@@ -60,8 +64,9 @@ Not too sure what this is?
 ---
 
 ## EBS Provisioning
-Can be used for storage volumes
-Used for databases
+
+- Can be used for storage volumes
+- Used for databases
 - Used for operating systems
 - Two Types of SSD
     - GP2
