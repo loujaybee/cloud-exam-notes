@@ -1,8 +1,9 @@
 * [ 🏠Home ](README.md)
-* [ Contents ](SUMMARY.md)
 
 ### Cloud Practicioner
 
+* [ Exam Prep ](./cloud-practitioner/exam-prep.md)
+* [ Extra Reading ](./cloud-practitioner/extra-reading.md)
 * [🔵 1 - Intro ](./cloud-practitioner/1-intro.md)
 * [🔵 2 - Cloud Concepts](./cloud-practitioner/2-cloud-concepts.md)
 * [🔵 3 - Billing & Pricing](./cloud-practitioner/3-billing-and-pricing.md)
@@ -23,6 +24,8 @@
 
 ### Developer Associate
 
+* [ Exam Prep ]()
+* [ Extra Reading ]()
 * [🔵 1 - Notes]()
 * [⭐️ 2 - Beginner IAM]()
 * [🔵 3 - EC2]()
@@ -37,6 +40,8 @@
 
 ### Solutions Architect Associate
 
+* [ Exam Prep ]()
+* [ Extra Reading ]()
 * [🔵 1 - Notes]()
 * [🔵 2 - AWS 10,000 Foot Overview]()
 * [🔵 3 - IAM & S3]()
@@ -50,6 +55,8 @@
 
 ### Advanced Networking (SP)
 
+* [ Exam Prep ]()
+* [ Extra Reading ]()
 * [🔵 1 - Notes]()
 * [☑️ 2 - Networking refresher](advanced-networking/2-networking-refresher.md)
 * [️☑️ 3 - Implement AWS networks](advanced-networking/3-design-and-implement-aws-networks.md)
