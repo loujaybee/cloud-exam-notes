@@ -5,7 +5,7 @@
 * [ Exam Prep ](./cloud-practitioner/exam-prep.md)
 * [ Extra Reading ](./cloud-practitioner/extra-reading.md)
 * [ Practical Exercises ](./cloud-practitioner/practical-exercises.md)
-* [🔵 1 - Intro ](./cloud-practitioner/1-intro.md)
+* [✅ 1 - Intro ](./cloud-practitioner/1-intro.md)
 * [🔵 2 - Cloud Concepts](./cloud-practitioner/2-cloud-concepts.md)
 * [🔵 3 - Billing & Pricing](./cloud-practitioner/3-billing-and-pricing.md)
 * [🔵 4 - Security In The Cloud](./cloud-practitioner/4-security-cloud.md)

@@ -20,7 +20,7 @@
 
 ## The 4 Different Support Plans
 
-1. Basic — Repsonses for billing, not technical.
-1. Developer — Contact for technical questions 12-24h response.
-1. Business — 24/7 support by phone, AWS Trusted Advisor.
-1. Enterprise — Get a TAM (Technical Account Manager) with 15m response time.
+1. Basic ($0PM) — Repsonses for billing, not technical.
+1. Developer ($29PM) — Contact for technical questions 12-24h response _for one person_.
+1. Business ($100PM) — 24/7 support by phone, AWS Trusted Advisor.
+1. Enterprise ($15000PM) — Get a TAM (Technical Account Manager) with 15m response time.
