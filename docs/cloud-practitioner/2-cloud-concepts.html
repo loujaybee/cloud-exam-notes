@@ -135,7 +135,20 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="1-intro.html">
+        <li class="chapter " data-level="2.3" data-path="practical-exercises.html">
+            
+                <a href="practical-exercises.html">
+            
+                    
+                     Practical Exercises 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="1-intro.html">
             
                 <a href="1-intro.html">
             
@@ -148,7 +161,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.4" data-path="2-cloud-concepts.html">
+        <li class="chapter active" data-level="2.5" data-path="2-cloud-concepts.html">
             
                 <a href="2-cloud-concepts.html">
             
@@ -161,7 +174,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.5" data-path="3-billing-and-pricing.html">
+        <li class="chapter " data-level="2.6" data-path="3-billing-and-pricing.html">
             
                 <a href="3-billing-and-pricing.html">
             
@@ -174,7 +187,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.6" data-path="4-security-cloud.html">
+        <li class="chapter " data-level="2.7" data-path="4-security-cloud.html">
             
                 <a href="4-security-cloud.html">
             
@@ -1350,6 +1363,49 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="cloud-concepts">Cloud Concepts</h1>
+<h2 id="using-iam-roles-with-ec2">Using IAM Roles (with EC2)</h2>
+<p>A safer way to give priveledges to EC2 instances, if you use the AWS CLI within an instance with a role, it will get the privledges from the attached role.</p>
+<ol>
+<li>Choose the service that will use the role.</li>
+<li>Attach a policy to the role.</li>
+<li>Tag the role.</li>
+<li>Attach the role to the EC2.</li>
+<li>Don&apos;t need credentials on the EC2, you can just use the role.</li>
+</ol>
+<h2 id="how-to-use-an-elastic-load-balancer">How To Use An Elastic Load Balancer</h2>
+<p>Three types of ALB exists...</p>
+<ol>
+<li>Application Load Balancer (Layer 7)</li>
+<li>Network Load Balancer (High Performance)</li>
+<li>Classic Load Balancer (Being Deprecated)</li>
+</ol>
+<p>Configuring an ALB:</p>
+<ul>
+<li>You need to configure your ALB for which AZ&apos;s which it can use.</li>
+<li>You&apos;ll need a target group for the servers that will receive your traffic.</li>
+<li>Configure your polling thresholds (how often it polls the server)</li>
+<li>Can take ~5 minutes to setup an ALB</li>
+</ul>
+<h2 id="autoscaling">AutoScaling</h2>
+<p>Two things to autoscaling...</p>
+<ol>
+<li>Launch Configuration (how you want to launch your EC2)</li>
+<li>Autoscaling Group</li>
+</ol>
+<h2 id="cloudwatch">CloudWatch</h2>
+<ul>
+<li>CloudWatch is for monitoring performance (metrics, logs)</li>
+<li>Can install custom metrics on AWS</li>
+</ul>
+<h2 id="systems-manager">Systems Manager</h2>
+<ul>
+<li>Used for configuration management</li>
+<li>Uses &quot;Run Command&quot; on difference EC2&apos;s</li>
+</ul>
+<p>// TODO: What&apos;s the difference between systems manager and ansible etc?
+// TODO: &#x1F477;&#x200D;&#x2640; Experiment with autoscaling groups
+// TODO: &#x1F477;&#x200D;&#x2640; How does <code>sudo su</code> work?
+// TODO: &#x1F477;&#x200D;&#x2640; Active/Active or Active/Passive with ALB?</p>
 
                                 
                                 </section>
@@ -1393,7 +1449,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"🔵 2 - Cloud Concepts","level":"2.4","depth":1,"next":{"title":"🔵 3 - Billing & Pricing","level":"2.5","depth":1,"path":"cloud-practitioner/3-billing-and-pricing.md","ref":"./cloud-practitioner/3-billing-and-pricing.md","articles":[]},"previous":{"title":"🔵 1 - Intro ","level":"2.3","depth":1,"path":"cloud-practitioner/1-intro.md","ref":"./cloud-practitioner/1-intro.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"cloud-practitioner/2-cloud-concepts.md","mtime":"2020-04-11T18:03:51.715Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-12T09:51:14.850Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"🔵 2 - Cloud Concepts","level":"2.5","depth":1,"next":{"title":"🔵 3 - Billing & Pricing","level":"2.6","depth":1,"path":"cloud-practitioner/3-billing-and-pricing.md","ref":"./cloud-practitioner/3-billing-and-pricing.md","articles":[]},"previous":{"title":"🔵 1 - Intro ","level":"2.4","depth":1,"path":"cloud-practitioner/1-intro.md","ref":"./cloud-practitioner/1-intro.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"cloud-practitioner/2-cloud-concepts.md","mtime":"2020-04-18T14:39:45.950Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-18T14:40:12.817Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
