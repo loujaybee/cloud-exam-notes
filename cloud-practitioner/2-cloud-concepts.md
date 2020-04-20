@@ -26,6 +26,26 @@ Configuring an ALB:
 * Configure your polling thresholds (how often it polls the server)
 * Can take ~5 minutes to setup an ALB
 
+## EC2
+
+- Vertical server in the Cloud
+- Instance Types
+    - T3, Lowest Cost, General Purpose
+    - M5, General Purpose
+    - X1, Large Memory
+
+## EBS
+
+- Storage Volumes attached to EC2 instances
+- SSD type
+    - GP2 - for general purpose
+    - IO1 - for provisioned IOps (DB servers)
+- Magnetic
+    - ST1 - Lowest cost HDD (data warehouse)
+    - SC1 - Lowest cost (file servers)
+
+// TODO: 👷‍♀ Research more about these EBS types
+
 ## AutoScaling
 
 Two things to autoscaling...
@@ -43,7 +63,14 @@ Two things to autoscaling...
 * Used for configuration management
 * Uses "Run Command" on difference EC2's
 
+## Linux
+
+* `sudo su` —> Stands for switch user
+* Fedora / RedHat / CentOS
+    * Installs with: `apt-get`
+* Ubuntu/Debian
+    * Installs with: `yum`
+
 // TODO: What's the difference between systems manager and ansible etc?
 // TODO: 👷‍♀ Experiment with autoscaling groups
-// TODO: 👷‍♀ How does `sudo su` work?
 // TODO: 👷‍♀ Active/Active or Active/Passive with ALB?

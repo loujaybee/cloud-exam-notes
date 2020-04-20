@@ -15,6 +15,4 @@
 
 ## Whitepaper: AWS Pricing Overview
 
-[Pricing Overview](http://d1.awsstatic.com/whitepapers/aws_pricing_overview.pdf)
-
-// TODO: 👷‍♀ Go through this whitepaper
+✅ [Pricing Overview](http://d1.awsstatic.com/whitepapers/aws_pricing_overview.pdf)

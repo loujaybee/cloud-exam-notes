@@ -21,17 +21,17 @@ General billing notes...
 1. Pay less when AWS grows
 1. Custom pricing
 
-#### The 3 Drivers Of Cost
+#### The 3 Primary Drivers Of Cost
 1. Compute
 1. Storage
 1. Data (Outbound)
 
 #### The 4 Pricing Models
 
-* On Demand (pay for what you use)
-* Reserved (reserved for a contract time)
-* Spot (based on market price)
-* Dedicated Hosts (for your use)
+1. **On Demand** - Pay for what you use, no commitment. Good for urgent requirements.
+1. **Reserved** - Reserved workloads for a given time, useful if you know your workload. Broken up into _standard_ (you can't change the instance type), _convertible_ (where you can change the class of your EC2 instances) and _scheduled_ (within time windows, good for more sporadic workloads).
+1. **Spot** - Purchase spare capacity, up to market price. Works for flexible start and end times. You are not terminated for a partial hour if AWS disable an instance, you _will be_ if you terminate it.
+1. **Dedicated** Hosts (for your use). Useful for regulatory requirements, and licensing needs.
 
 #### What is free?
 * VPC is free
