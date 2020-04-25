@@ -1,8 +1,8 @@
 # Billing & Pricing
 
-## 1. Billing Overview
+## 1. Billing Principles / Overview
 
-General billing notes...
+General billing concepts / ideas.
 
 #### Capex vs Opex
 * **Capex**: Fixed upfront cost (static hosting)
@@ -90,12 +90,33 @@ You need to know the factors that affect pricing for the main services.
 
 ## 3. Billing Services / Tools
 
-### Budgets vs Cost Explorer
+The tools you can use to review / implement billing.
+
+#### Budgets vs Cost Explorer
 
 - **Budgets**: Forecasts costs _before_ they occur.
 - **Cost Explorer**: Costs _after_ they've occurred.
 
-### Tags
+#### Create a Billing alarm
+
+* Must be done in the `us-east-1` region
+* Emails are sent via SNS topic
+* You need to create an email subscription to SNS also
+
+#### Tags
 
 - Tags & Resource Groups
 - Can Create Resource Groups
+
+## 4. AWS Organisations + Billing
+
+How AWS Organisations can affect / help with billing...
+
+#### Consolidated Billing
+
+- Used to consolidate billing across AWS accounts (Using AWS Organisations)
+- You have one paying account, so you get economies of scale (for using more)
+- Paying account cannot access other accounts (don't deploy into the paying account)
+- Billing alerts on a paying account include costs for all associated accounts
+- Billing alerts on individual accounts still work
+- MFA on root, and complex password on root
