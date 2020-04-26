@@ -21,3 +21,26 @@ _The way AWS is laid out..._
 1. Data laws — You have legal requirements that means you need to be in a given region.
 
 // TODO: 👷‍♀ What's the third reason!?
+
+## Cloud Concepts
+
+#### 6 Advantages Of Cloud
+
+- Trade capital expense for variable expense
+- Economies of scale
+- Stop guessing about capacity (on demand)
+- Increase speed and agility
+- Stop spending money running data centers
+- Global in minutes
+
+#### 3 Types of Cloud Computing
+
+- IAAS
+- PAAS
+- SAAS
+
+### 3 Types of Cloud
+
+- Public: AWS, Azure, GCP
+- Hybrid: Mixture of public and private
+- Private Cloud: Your datacenter

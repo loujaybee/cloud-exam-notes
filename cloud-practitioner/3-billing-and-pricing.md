@@ -63,10 +63,11 @@ You need to know the factors that affect pricing for the main services.
 * Data Transfer
 
 #### For S3...
-1. Storage Class
-1. Storage (Amount)
-1. Requests
+1. Storage Class (Glacier, etc)
+1. Storage (Amount of files)
+1. Requests ()
 1. Data Transfer (data in/out)
+1. Transfer Acceleration + Cross Region Replication (settings which you can turn on)
 
 #### For Glacier...
 1. Storage
@@ -120,3 +121,14 @@ How AWS Organisations can affect / help with billing...
 - Billing alerts on a paying account include costs for all associated accounts
 - Billing alerts on individual accounts still work
 - MFA on root, and complex password on root
+
+#### AWS Cost Calculators
+
+- Simple Monthly Calculator (Basic Cost Calculations)
+    - Calculate basic monthly costs based on resources
+- Total Cost of Ownership Calculator
+    - Cost of on premise vs on AWS
+
+// TODO: 👷‍♀ https://awstcocalculator.com/
+// TODO: 👷‍♀ Explore https://aws.amazon.com/calculator/calculator-faq/
+// TODO: 👷‍♀ Experiemnt with these calculators
