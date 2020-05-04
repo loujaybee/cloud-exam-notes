@@ -153,7 +153,7 @@
                 <a href="1-intro.html">
             
                     
-                    🔵 1 - Intro 
+                    ✅ 1 - Intro 
             
                 </a>
             
@@ -166,7 +166,7 @@
                 <a href="2-cloud-concepts.html">
             
                     
-                    🔵 2 - Cloud Concepts
+                    ✅ 2 - Cloud Concepts
             
                 </a>
             
@@ -179,7 +179,7 @@
                 <a href="3-billing-and-pricing.html">
             
                     
-                    🔵 3 - Billing & Pricing
+                    ✅ 3 - Billing & Pricing
             
                 </a>
             
@@ -192,7 +192,7 @@
                 <a href="4-security-cloud.html">
             
                     
-                    🔵 4 - Security In The Cloud
+                    ✅ 4 - Security In The Cloud
             
                 </a>
             
@@ -1362,13 +1362,41 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="1-autoscaling-groups">1. AutoScaling Groups</h2>
+                                <h1 id="practical-exercises">Practical Exercises</h1>
+<p>&#x2705; Setup EC2 Instance
+&#x2705; Setup 2 EC2 Instances
+&#x2705; Setup ALB for the EC2 Instances
+&#x2705; Setup some EC2 with nginx (and add bootstrap scripts)</p>
 <ul>
-<li>Setup 2 EC2 using Autoscaling</li>
+<li>Setup an IAM role and assign to an EC2</li>
+<li>Allow the EC2 to write to S3 on boot-up</li>
+<li>Setup autoscaling for the instances</li>
+<li>Configure athena</li>
+<li>Setup custom metrics for the instances</li>
 </ul>
-<h2 id="2-setup-custom-metrics">2. Setup Custom Metrics</h2>
+<h3 id="future-extensions">Future Extensions</h3>
 <ul>
-<li>Setup some custom metrics using CloudWatch</li>
+<li>Install RDS and connect from EC2</li>
+<li>Create S3 bucket, make a file public, make a folder public, etc.</li>
+<li>Restrict SSH access (on Security Groups) to my IP</li>
+<li>Install Amazon Inspektor on AWS EC2 instances</li>
+<li>Setup detailed monitoring agent on EC2 instance</li>
+<li>Setup some CloudTrail monitoring checks (and use Athena to query them)</li>
+<li>Setup some AWS Config rules</li>
+<li>Play around with S3 ACL&apos;s</li>
+<li><p>Understand consolidated billing (steps to setup)</p>
+</li>
+<li><p>Setup some roles / users (with different policies, etc)</p>
+</li>
+<li>Tag resources (and use explorer to find them)</li>
+<li>Add WAF infront of your fake application</li>
+<li><p>Setup EC2 backups and restore processes</p>
+</li>
+<li><p>Setup custom metrics for the instances</p>
+</li>
+<li>Setup some EBS volumes, log in, dig out the volumes, break them.</li>
+<li>Research about Linux volumes and Docker volumes</li>
+<li>Create a VPC for your application (probably do this another day...)</li>
 </ul>
 
                                 
@@ -1402,7 +1430,7 @@
                 </a>
                 
                 
-                <a href="1-intro.html" class="navigation navigation-next " aria-label="Next page: 🔵 1 - Intro ">
+                <a href="1-intro.html" class="navigation navigation-next " aria-label="Next page: ✅ 1 - Intro ">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1413,7 +1441,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":" Practical Exercises ","level":"2.3","depth":1,"next":{"title":"🔵 1 - Intro ","level":"2.4","depth":1,"path":"cloud-practitioner/1-intro.md","ref":"./cloud-practitioner/1-intro.md","articles":[]},"previous":{"title":" Extra Reading ","level":"2.2","depth":1,"path":"cloud-practitioner/extra-reading.md","ref":"./cloud-practitioner/extra-reading.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"cloud-practitioner/practical-exercises.md","mtime":"2020-04-18T14:37:50.222Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-18T14:40:12.817Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":" Practical Exercises ","level":"2.3","depth":1,"next":{"title":"✅ 1 - Intro ","level":"2.4","depth":1,"path":"cloud-practitioner/1-intro.md","ref":"./cloud-practitioner/1-intro.md","articles":[]},"previous":{"title":" Extra Reading ","level":"2.2","depth":1,"path":"cloud-practitioner/extra-reading.md","ref":"./cloud-practitioner/extra-reading.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"cloud-practitioner/practical-exercises.md","mtime":"2020-04-30T14:12:11.216Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-04T08:19:35.126Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>🔵 2 - Cloud Concepts · GitBook</title>
+        <title>✅ 2 - Cloud Concepts · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -153,7 +153,7 @@
                 <a href="1-intro.html">
             
                     
-                    🔵 1 - Intro 
+                    ✅ 1 - Intro 
             
                 </a>
             
@@ -166,7 +166,7 @@
                 <a href="2-cloud-concepts.html">
             
                     
-                    🔵 2 - Cloud Concepts
+                    ✅ 2 - Cloud Concepts
             
                 </a>
             
@@ -179,7 +179,7 @@
                 <a href="3-billing-and-pricing.html">
             
                     
-                    🔵 3 - Billing & Pricing
+                    ✅ 3 - Billing & Pricing
             
                 </a>
             
@@ -192,7 +192,7 @@
                 <a href="4-security-cloud.html">
             
                     
-                    🔵 4 - Security In The Cloud
+                    ✅ 4 - Security In The Cloud
             
                 </a>
             
@@ -1347,7 +1347,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >🔵 2 - Cloud Concepts</a>
+        <a href=".." >✅ 2 - Cloud Concepts</a>
     </h1>
 </div>
 
@@ -1363,7 +1363,56 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="cloud-concepts">Cloud Concepts</h1>
-<h2 id="using-iam-roles-with-ec2">Using IAM Roles (with EC2)</h2>
+<h2 id="1-account-setup">1. Account Setup</h2>
+<p><em>How to setup an AWS account</em></p>
+<h4 id="aws-organisations">AWS Organisations</h4>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Global Service</li>
+<li>Can create accounts fresh in the organisation</li>
+<li>Can invite accounts (emails the root user)</li>
+<li>You can&apos;t invite another organisation/ root account</li>
+</ul>
+<p><strong>The hierarchy:</strong></p>
+<ul>
+<li>Policies stand alone (like IAM policies)</li>
+<li>Accounts are categorised into organisational units</li>
+<li>Policies are attached to organisational units</li>
+</ul>
+<p>// TODO: &#x1F477;&#x200D;&#x2640; Can an organisation invite another organisation?</p>
+<h4 id="the-4-different-support-plans">The 4 Different Support Plans</h4>
+<ol>
+<li>Basic ($0PM) &#x2014; Repsonses for billing, not technical.</li>
+<li>Developer ($29PM) &#x2014; Contact for technical questions 12-</li>
+<li>Business ($100PM) &#x2014; 24/7 support by phone, AWS Trusted Advisor.</li>
+<li>Enterprise ($15000PM) &#x2014; Get a TAM (Technical Account Manager) with 15m response time.</li>
+</ol>
+<h4 id="quick-starts--aws-landing-zone">Quick Starts &amp; AWS Landing Zone</h4>
+<p><strong>Quick Start</strong></p>
+<ul>
+<li>Templates designed by an architect (provisioned through CloudFormation)</li>
+</ul>
+<p>// TODO : &#x1F477;&#x200D;&#x2640; Learn more about this &quot;service&quot;</p>
+<p><strong>Landing Zone</strong></p>
+<ul>
+<li>Deploys 4 accounts at the same time (quick setup of AWS accounts)</li>
+</ul>
+<h4 id="iam">IAM</h4>
+<ul>
+<li>Global service (not regional)</li>
+<li><em>*Hierarchy:</em>- Users, Groups, Roles</li>
+<li>3 (kinda) ways of accessing AWS: Programattic access (and SDK access), console access.</li>
+<li>MFA is useful for users</li>
+<li>Create one user per person, assign groups and roles where necessary</li>
+<li>Apply password policy (complexity, expiration, password reuse)</li>
+<li>Policies come as JSON documents.</li>
+</ul>
+<p>// TODO : &#x1F477;&#x200D;&#x2640; Draw up the IAM relations (Role, Policy, User)
+// TODO : &#x1F477;&#x200D;&#x2640; Are group permissions additive?
+// TODO : &#x1F477;&#x200D;&#x2640; How do principals work?</p>
+<h2 id="2-compute-services-websites--scaling">2. Compute Services, Websites &amp; Scaling.</h2>
+<p><em>The services to be used as compute.</em></p>
+<h4 id="using-iam-roles-with-ec2">Using IAM Roles (with EC2)</h4>
 <p>A safer way to give priveledges to EC2 instances, if you use the AWS CLI within an instance with a role, it will get the privledges from the attached role.</p>
 <ol>
 <li>Choose the service that will use the role.</li>
@@ -1372,7 +1421,7 @@
 <li>Attach the role to the EC2.</li>
 <li>Don&apos;t need credentials on the EC2, you can just use the role.</li>
 </ol>
-<h2 id="how-to-use-an-elastic-load-balancer">How To Use An Elastic Load Balancer</h2>
+<h4 id="how-to-use-an-elastic-load-balancer">How To Use An Elastic Load Balancer</h4>
 <p>Three types of ALB exists...</p>
 <ol>
 <li>Application Load Balancer (Layer 7)</li>
@@ -1386,26 +1435,203 @@
 <li>Configure your polling thresholds (how often it polls the server)</li>
 <li>Can take ~5 minutes to setup an ALB</li>
 </ul>
-<h2 id="autoscaling">AutoScaling</h2>
+<p>// TODO: &#x1F477;&#x200D;&#x2640; Active/Active or Active/Passive with ALB?</p>
+<h4 id="ec2">EC2</h4>
+<ul>
+<li>Vertical server in the Cloud</li>
+<li>Instance Types<ul>
+<li>T3, Lowest Cost, General Purpose</li>
+<li>M5, General Purpose</li>
+<li>X1, Large Memory</li>
+</ul>
+</li>
+<li>Make a web server<ul>
+<li><code>yum install httpd -yes</code></li>
+<li><code>service httpd start</code></li>
+<li><code>echo &apos;&lt;p&gt; Hello &lt;/p&gt;&apos; &gt; /var/www/html</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="security-groups--firewalls">Security Groups / Firewalls</h4>
+<ul>
+<li>To allow a single IP you need to add <code>/32</code> to your IP to restrict just that IP</li>
+</ul>
+<h4 id="using-ec2-as-a-web-server">Using EC2 as a Web Server</h4>
+<ul>
+<li>Storage Volumes attached to EC2 instances</li>
+<li>SSD type<ul>
+<li>GP2 - for general purpose</li>
+<li>IO1 - for provisioned IOps (DB servers)</li>
+</ul>
+</li>
+<li>Magnetic<ul>
+<li>ST1 - Lowest cost HDD (data warehouse)</li>
+<li>SC1 - Lowest cost (file servers)</li>
+</ul>
+</li>
+</ul>
+<p>// TODO: &#x1F477;&#x200D;&#x2640; Research more about these EBS types</p>
+<h4 id="autoscaling">AutoScaling</h4>
 <p>Two things to autoscaling...</p>
 <ol>
 <li>Launch Configuration (how you want to launch your EC2)</li>
 <li>Autoscaling Group</li>
 </ol>
-<h2 id="cloudwatch">CloudWatch</h2>
+<p>// TODO: &#x1F477;&#x200D;&#x2640; Experiment with autoscaling groups</p>
+<h4 id="elastic-beanstalk">Elastic Beanstalk</h4>
+<ul>
+<li>Kinda like Heroku (using AWS underlying resources)</li>
+<li>Launch basic applications (PHP, Node.JS for instance)</li>
+</ul>
+<h2 id="3-operations--monitoring">3. Operations + Monitoring</h2>
+<p><em>Things that affect operations and monitoring...</em></p>
+<h4 id="cloudwatch">CloudWatch</h4>
 <ul>
 <li>CloudWatch is for monitoring performance (metrics, logs)</li>
 <li>Can install custom metrics on AWS</li>
 </ul>
-<h2 id="systems-manager">Systems Manager</h2>
+<h4 id="systems-manager">Systems Manager</h4>
 <ul>
 <li>Used for configuration management</li>
 <li>Uses &quot;Run Command&quot; on difference EC2&apos;s</li>
 </ul>
-<p>// TODO: What&apos;s the difference between systems manager and ansible etc?
-// TODO: &#x1F477;&#x200D;&#x2640; Experiment with autoscaling groups
-// TODO: &#x1F477;&#x200D;&#x2640; How does <code>sudo su</code> work?
-// TODO: &#x1F477;&#x200D;&#x2640; Active/Active or Active/Passive with ALB?</p>
+<p>// TODO: &#x1F477;&#x200D;&#x2640; What&apos;s the difference between systems manager and ansible etc?</p>
+<h4 id="cloudtrail">CloudTrail</h4>
+<p>// TODO: &#x1F477;&#x200D;&#x2640; What is the purpose of a CloudTrail? When would you use it?</p>
+<h4 id="athena-vs-macie">Athena vs Macie</h4>
+<p><strong>Athena:</strong></p>
+<ul>
+<li>Serverless (so you pay per query)</li>
+<li>Works with data in S3</li>
+<li>No complex ETL</li>
+</ul>
+<p><strong>Macie:</strong></p>
+<ul>
+<li>A sub-feature of S3 / CloudTrail</li>
+<li>Uses NLP to protect PII on S3</li>
+</ul>
+<p>// TODO: &#x1F477;&#x200D;&#x2640; Read more about Macie, and what it is</p>
+<h2 id="4-other-fundamental-services">4. Other Fundamental Services</h2>
+<p><strong>What is S3?</strong></p>
+<ul>
+<li>Flat &quot;Object Based&quot; storage</li>
+<li>Not &quot;Block Storage&quot; (like where you can store an Operating System)</li>
+<li>A bucket is a &quot;folder&quot; in the crowd</li>
+<li>Key Value (key the name of the item) Value (the value of the actual file data)</li>
+</ul>
+<p><strong>S3 Availability</strong></p>
+<ul>
+<li>Consistency in AWS<ul>
+<li>Read after write consistency for new objects (Immediate updates)</li>
+<li>Eventually consistent for overwrite PUTs (Slow updates, basically)</li>
+</ul>
+</li>
+<li>Availability<ul>
+<li>99.9% availability (built to be 99.99%)</li>
+<li>Guarenteed 99.99999999999% (11 nines)</li>
+</ul>
+</li>
+</ul>
+<p><strong>S3 Storage Classes</strong></p>
+<ul>
+<li>S3 Storage Classes<ul>
+<li>Standard</li>
+<li>IA</li>
+<li>One Zone IA</li>
+<li>S3 Intelligent Tiering (move data to best cost tier)</li>
+<li>Glacier (and Glacier Deep Archive, i.e 12 hour retrieval)</li>
+</ul>
+</li>
+<li>Transfer Acceleration<ul>
+<li>Upload to a region nearest to the user</li>
+</ul>
+</li>
+<li>Cross Region Replication<ul>
+<li>Replicated to a secondary bucket (for disaster recovery)</li>
+</ul>
+</li>
+</ul>
+<p><strong>S3 Permissions</strong></p>
+<ul>
+<li>An ACL is on a file level (fine grained) bucket policy is on a bucket level</li>
+<li>Used to make buckets public</li>
+<li>You can do this on an individual object level</li>
+</ul>
+<p>// TODO: &#x1F477;&#x200D;&#x2640; Understand more about how ACL&apos;s work on S3</p>
+<h4 id="databases">Databases</h4>
+<p><strong>Availability For Databases</strong></p>
+<ul>
+<li>Multi AZ which allows failover to a new availability zone</li>
+<li>Read replicas are sent to the replica</li>
+</ul>
+<p><strong>OLTP vs OLAP</strong></p>
+<ul>
+<li><strong>OLTP</strong> is running a query (i.e grabbing a row)</li>
+<li><strong>OLAP</strong> usually done in a data warehouse (not on primary)... on AWS you have redshift</li>
+</ul>
+<p><strong>ElastiCache</strong></p>
+<ul>
+<li>Two types of elastic cache: Memcached and Redis</li>
+</ul>
+<p><strong>Aurora vs DynamoDB vs Redshift</strong></p>
+<ul>
+<li>Aurora: Scalable, multi-az, used for joinable data</li>
+<li>Dynamo: Use when you don&apos;t have joins, don&apos;t store large data in DynamoDB</li>
+<li>Redshift: Don&apos;t use for OLTP</li>
+<li>CloudSearch &amp; ElasticSearch:</li>
+<li>Neptune: Graph database</li>
+<li>Elasticache: Caching in elasticache, cloudfront for CDN caching</li>
+</ul>
+<h4 id="cloudfront">CloudFront</h4>
+<ul>
+<li>Helps distribute files around the world</li>
+<li>Cache is controlled by the TTL</li>
+<li><strong>Edge</strong> is where it&apos;s cached</li>
+<li><strong>Origin</strong> is the originator of the files</li>
+<li><strong>Distribution</strong> which is the collection of edge locations</li>
+</ul>
+<h2 id="5-miscellaneous-notes--services">5. Miscellaneous Notes / Services</h2>
+<h4 id="aws-cli">AWS CLI</h4>
+<ul>
+<li>Format of AWS command: <code>aws service-name command</code></li>
+<li>Add credentials to use AWS CLI</li>
+</ul>
+<h4 id="global-services">Global Services</h4>
+<p>Which services are global?</p>
+<ol>
+<li>IAM</li>
+<li>Route53</li>
+<li>Cloudfront</li>
+<li>SNS + SES</li>
+</ol>
+<p>Remember, S3 is not global.</p>
+<h4 id="which-aws-services-can-be-used-on-premise">Which AWS Services can be used on premise?</h4>
+<ul>
+<li><strong>AWS Snowball</strong> - To import data into AWS.</li>
+<li><strong>Snowball Edge</strong> - Computer with storage (comes with Lambda installed).</li>
+<li><strong>Storage Gateway</strong> - Replicates to S3.</li>
+<li><strong>Code Deploy</strong> - Can deploy to on premise code.</li>
+<li><strong>OpsWorks</strong> - Managed Chef, can be used to deploy to on-premise.</li>
+<li><strong>IoT Greengrass</strong> - Managed Chef, can be used to deploy to on-premise.</li>
+</ul>
+<p>// TODO: &#x1F477;&#x200D;&#x2640;</p>
+<h4 id="linux">Linux</h4>
+<ul>
+<li><code>sudo su</code> &#x2014;&gt; Stands for switch user</li>
+<li>Fedora / RedHat / CentOS<ul>
+<li>Installs with: <code>apt-get</code></li>
+</ul>
+</li>
+<li>Ubuntu/Debian<ul>
+<li>Installs with: <code>yum</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="dns--s3-websites">DNS + S3 Websites</h4>
+<ul>
+<li>Register a domain within the AWS console</li>
+<li>Creating a website bucket must be the same, i.e <code>yourwebsite.com</code></li>
+</ul>
 
                                 
                                 </section>
@@ -1433,12 +1659,12 @@
 
             
                 
-                <a href="1-intro.html" class="navigation navigation-prev " aria-label="Previous page: 🔵 1 - Intro ">
+                <a href="1-intro.html" class="navigation navigation-prev " aria-label="Previous page: ✅ 1 - Intro ">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="3-billing-and-pricing.html" class="navigation navigation-next " aria-label="Next page: 🔵 3 - Billing & Pricing">
+                <a href="3-billing-and-pricing.html" class="navigation navigation-next " aria-label="Next page: ✅ 3 - Billing & Pricing">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1449,7 +1675,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"🔵 2 - Cloud Concepts","level":"2.5","depth":1,"next":{"title":"🔵 3 - Billing & Pricing","level":"2.6","depth":1,"path":"cloud-practitioner/3-billing-and-pricing.md","ref":"./cloud-practitioner/3-billing-and-pricing.md","articles":[]},"previous":{"title":"🔵 1 - Intro ","level":"2.4","depth":1,"path":"cloud-practitioner/1-intro.md","ref":"./cloud-practitioner/1-intro.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"cloud-practitioner/2-cloud-concepts.md","mtime":"2020-04-18T14:39:45.950Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-18T14:40:12.817Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"✅ 2 - Cloud Concepts","level":"2.5","depth":1,"next":{"title":"✅ 3 - Billing & Pricing","level":"2.6","depth":1,"path":"cloud-practitioner/3-billing-and-pricing.md","ref":"./cloud-practitioner/3-billing-and-pricing.md","articles":[]},"previous":{"title":"✅ 1 - Intro ","level":"2.4","depth":1,"path":"cloud-practitioner/1-intro.md","ref":"./cloud-practitioner/1-intro.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"cloud-practitioner/2-cloud-concepts.md","mtime":"2020-04-30T14:29:38.237Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-04T08:19:35.126Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
