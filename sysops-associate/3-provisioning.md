@@ -65,9 +65,33 @@ Allows you to run start up scripts for your machine
 
 ## EBS Provisioning
 
+## What is EBS?
 - Can be used for storage volumes
 - Used for databases
 - Used for operating systems
+
+### The 4 EBS Volume Types
+
+- GP2
+    - Is a general purpose volume (generic use cases)
+    - Up to 10,000 iops
+    - Performance is linked to the size of the volume
+    - Allows IOPS bursting
+- IO1
+    - Highest performance volume
+    - Mission critical stuff
+    - Provisioned IOPS
+    - Used for high throughput databases etc
+    - Hard Disk Drives (They’re cheaper, but performance is massively reduced)
+- ST1
+    - Can’t be boot, quite slow still
+    - Big data (non-production, but still performant)
+- SC1
+    - Basically for very low cost (but slow)
+    - Used for large and infrequent access
+    - Has a lower storage cost
+
+
 - Two Types of SSD
     - GP2
         - General Purpose SSD
