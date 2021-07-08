@@ -1,23 +1,43 @@
+## CloudWatch
 
-### EC2 Custom vs Out-Of-The-Box Metrics
-- Standard metric time for EC2 cloudwatch metrics is 5 minutes
-- Detailed monitoring is 1 minute
-- High resolution monitoring allows faster resolution (can be as low as 1 second)
+Understanding the metrics for EC2 from CloudWatch.
 
-### EC2 CloudWatch metrics out-of-the-box
+* CloudWatch monitors application performance
+* CloudWatch logs are stored indefinitely
+* Standard metric time for EC2 cloudwatch metrics varies between 1 / 3 or 5 minutes
+* Can be used on premise by using the SSM agent
+
+##### CloudWatch concepts
+
+- **Namespace** Is a grouping of metrics, designed to avoid clashing.
+- **Metrics** Are the fundamental of your time series data.
+- **Timestamp** Can be created 2 weeks in the past, or a couple of days in future.
+- **Retention** Metrics are rolled up to greater resolutions over time.
+- **Dimensions** A metric can have up to 10 dimensions.
+
+### EC2 Metrics
+
+- You can receive get metrics after termination
+- When turning on detailed monitoring you can see the metrics immediately and historically (TODO: Check this)
+
+#### Out Of The Box metrics
 - CPU
 - Network
 - Disk
 - Status Check
 
-**Note:** RAM is a custom metric
+_RAM Utilisation is not an out-of-the-box metric_
 
-### Setting up a Custom EC2 Metric
+#### Custom EC2 Metrics
+- Assign an IAM role to your EC2
 - Install the cloudwatch agent on your machine (using user data startup script)
-- You use a user data script to configure your EC2
 - User data scripts must provider their interpreter (Use a shebang (#!/bin/bash)
-- Scripts are executed as root
-- On Ubuntu you can run this as a crontab (put a shell script into a cron folder)
+- On Ubuntu you can run this as a crontab (put a shell script into a `/etc/crontab` file)
+
+#### Detailed Monitoring
+- High resolution monitoring allows faster resolution (can be as low as 1 second)
+- Detailed monitoring allows greater than 5 minute granularity
+- [AWS Docs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch-new.html)
 
 ### The Four EC2 Pricing Models
 - On Demand
