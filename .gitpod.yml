@@ -1,0 +1,11 @@
+tasks:
+  - name: Start development environment
+    init: yarn install && yarn run build
+    command: yarn serve
+  - name: Bash
+    command: echo 'Your commands here!'
+    openMode: split-right
+
+ports:
+  - port: 4000
+    onOpen: open-preview

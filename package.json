@@ -9,6 +9,6 @@
     "serve": "gitbook serve"
   },
   "dependencies": {
-    "gitbook-cli": "^2.3.2"
+    "gitbook-cli": "github:gengjiawen/gitbook-cli"
   }
 }
