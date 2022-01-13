@@ -21,10 +21,9 @@
 ## Concepts
 
 ### CI/CD/CD
-
 - Continuous Integration: Code, Build, Integrate, Test
-- Continuous Delivery: Code, Build, Integrate Test, Release
-- Continuous Deployment: Code, Build, Integrate Test, Release, Deployment
+- Continuous Delivery: Code, Build, Integrate Test, Release (preparing code for deployment, but deployment is still a manual process)
+- Continuous Deployment: Code, Build, Integrate Test, Release, Deployment 
 
 ## Services
 
@@ -43,8 +42,15 @@
 - Everything in parameter store is automatically versioned
 - You can't revert an advanced parameter due to it's size
 
+### Amazon Cognito
+- **Cognito User Pools** - User directories that provide sign-up and sign-in options for your apps users. Manage actions like sign-up, sign-in, account recovery, confirmation. Works via JWT. Can integrate events with Lambda. 
+- **Cognito Identity Pools** - Grant temporary access to other AWS services.
+- **Cognito Sync** - Syncs user data and preferences across multiple devices (uses SNS under the hood). Is key-value data. 
+- Amplify CLI provisions cognito under the hood 
+
 ### AWS CloudFormation
 - Macro's are DSL's that provide extensions to CloudFormation. Macro's are created via AWS Lambda. 
+- 
 
 ### AWS Step Functions
 - A state machine for serverless workflows
@@ -67,6 +73,7 @@
 - **Phases:** `install`, `pre_build`, `build`, `post_build`
 
 ### Code Deploy
+- Fully managed service in the cloud
 - Configured using the `appspec.yml` file
 - Can manage traffic shifting, e.g. doing canary, blue/green type deployments, and in-place deployments
 - Provide bash scripts for all the hooks (app stop, before install, after install), which are zipped up
@@ -86,6 +93,9 @@
 - Three components of CodeStar: Project dashboard, deployment pipeline, access management
 
 ## Questions
+- COG: How does SAML really work?
+- COG: Difference between cognito user pools vs AWS log in via SSO
+- COG: What's the difference between cognito and Auth0?
 - PS: Can parameter store be used for storing passwords? Why?
 - CD: What's the difference between CodePipeline and Code Deploy?
 - CD: Why over GitHub Actions, for instance?
@@ -96,9 +106,12 @@
 - SF: When calling out to another service, how does it call back? Is that managed via the SDK? Or via something else?
 
 ## Hands On
+- Cognito: Authenticate the user
 - CD: Use CodeDeploy to deploy EC2 instances
 - CB: Run a code build pipeline
 - SF: Create your own step-functions example project
 
 ## Further Reading
 - [Complete CI/CD with AWS CodeCommit, AWS CodeBuild, AWS CodeDeploy, and AWS CodePipeline](https://aws.amazon.com/blogs/devops/complete-ci-cd-with-aws-codecommit-aws-codebuild-aws-codedeploy-and-aws-codepipeline/)
+- [The Case For And Against Cognito](https://theburningmonk.com/2021/03/the-case-for-and-against-amazon-cognito/)
+- [CloudFormation Macro's](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html)
