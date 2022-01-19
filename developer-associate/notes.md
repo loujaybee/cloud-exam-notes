@@ -14,7 +14,6 @@
 - Buy prep questions
 
 ## Courses
-
 - ExamPro: https://app.exampro.co/student/material/dva-c01/1188
 - Stephane Mareek: https://www.udemy.com/course/aws-certified-developer-associate-dva-c01/learn/lecture/19733666?start=15#overview
 
@@ -28,14 +27,19 @@
 ## Services
 
 ### Kinesis
-
 - Real time data streaming service (sharded streams)
 - Stream types: **data streams** pay per running shard, consumers keep their own position, data is ordered, persist in a stream for a long time (up to 365 days, defaults to 24 hours), **data analytics streams** allow you to run SQL on the stream for real-time data analytics, **video streams** allows you to process a video stream (applying ML or processing on the stream), **firehose** is simpler, data immediately dissapears and can only have one consumer.
 
 ### SQS
-
 - A queuing system decouples system via events
 
+### [CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html)
+- Used for creating an audit trail
+- CloudTrail is logging by default and will has 90 day retention by default
+- If you need more than 90 days you need a **trail**. "Trails" are essentially streams that go to S3 and need to be analysed by something like Athena. Trail options (all **regions** delivered to S3 which is the default option, single region which can only be viewed in that region, **encryption**, apply **organisationally** but must be created in the management account for this and can be viewed by organisation member accounts, and can enable log file validation)
+- You can send CloudTrail to CloudWatch
+- **Management events** configuring security, logging setup, cannot be turned off vs **data events** which are tracking more fine-grained events, and can be enabled, only lambda and s3 are supported, but they're incredibly high volume and **insight events** which are AI generated when something suspicious appears to be happening.
+- We now have **CloudTrail Lake** immutable
 
 ### DynamoDB ([Docs](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html))
 
@@ -78,7 +82,6 @@
 
 ### AWS CloudFormation
 - Macro's are DSL's that provide extensions to CloudFormation. Macro's are created via AWS Lambda. 
-- 
 
 ### AWS Step Functions
 - A state machine for serverless workflows
@@ -121,6 +124,9 @@
 - Three components of CodeStar: Project dashboard, deployment pipeline, access management
 
 ## Questions
+- CT: How does the cross account trail work? It tracks other accounts? How? 
+- CT: How does log file validation work? Immutable log? 
+- CT: CloudTrail vs RedShift, what's the big difference? (Try it)
 - KSS: Difference between Kinesis and SQS
 - COG: How does SAML really work?
 - COG: Difference between cognito user pools vs AWS log in via SSO
