@@ -10,7 +10,7 @@
   - Core services (Lambda, EC2, RDS, etc)
 - Update your imaginary business repo with some new services
   - Create an AWS diagram
-- Check out the other courses to see if anything is missing
+- Check out the other courses to see if anything is missing (ACloudGuru, Stephane Mareek, Cloud Academy)
 - Buy prep questions
 
 ## Courses
@@ -26,6 +26,34 @@
 - Continuous Deployment: Code, Build, Integrate Test, Release, Deployment 
 
 ## Services
+
+### Kinesis
+
+- Real time data streaming service (sharded streams)
+- Stream types: **data streams** pay per running shard, consumers keep their own position, data is ordered, persist in a stream for a long time (up to 365 days, defaults to 24 hours), **data analytics streams** allow you to run SQL on the stream for real-time data analytics, **video streams** allows you to process a video stream (applying ML or processing on the stream), **firehose** is simpler, data immediately dissapears and can only have one consumer.
+
+### SQS
+
+- A queuing system decouples system via events
+
+
+### DynamoDB ([Docs](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html))
+
+- Two read consistency options: **Eventually consistent reads** (default), **strongly consistent** reads.
+- Partitions have a maximum of 3000 RCU's (read capacity units) and 1000 WCU's (write capacity units)
+- DynamoDB automatically partitions
+- Primary keys (cannot be changed after table creation): **partitionkey** which must be unique or a composite primary key, e.g. **partition key** and **sort key** where sort key must be unique.
+- Avoid scans where possible
+- Choose **provisioned** (limit the maximum amount of capacity where throttled requests are dropped) or **on-demand** capacity where traffic is unpredictable or scales to zero (default upper limit is 40,000 WCU's/RCU's)
+- **RCU** - 1 RPS (strong consistency). 2 RPS (eventual consistency) per 4KB in size
+- **WCU** - 1 WPS up to 1KB
+- For global tables (multi-region, multi-master) you need KMS, and streams enabled
+- Transaction support (performs two underlying reads/writes) via `TransactWriteItems` and `TransactGetItems`
+- TTL for expiring a record (you have to specify the attribute/column with a numerical date/epoch)
+- **Streams** capture changes (write, update, delete) to data in the order of transactions
+- **Errors** - **ProvisionedThroughputExceededException** where you exceed provisioned throughput, SDK will retry with exponential back off.
+- **Indexes** are kinda like a copy, and can be used to query or scan against for different access patterns **LSI** can only be created with initial table, you can only have 5 of them, can be queried in eventual or strong consistency and consume resources from the base table **GSI** are limited to 20 per table, can be updated at any time and are stored away from the base table (so they scale separately).
+- **DAX** - Fully managed in-memory cache for read-intensive applications to reduce response times
 
 ### AWS SAM
 - Extension of CloudFormation (with CLI)
@@ -93,6 +121,7 @@
 - Three components of CodeStar: Project dashboard, deployment pipeline, access management
 
 ## Questions
+- KSS: Difference between Kinesis and SQS
 - COG: How does SAML really work?
 - COG: Difference between cognito user pools vs AWS log in via SSO
 - COG: What's the difference between cognito and Auth0?
@@ -106,6 +135,7 @@
 - SF: When calling out to another service, how does it call back? Is that managed via the SDK? Or via something else?
 
 ## Hands On
+- DDB: Setup different indexes and query them
 - Cognito: Authenticate the user
 - CD: Use CodeDeploy to deploy EC2 instances
 - CB: Run a code build pipeline
@@ -115,3 +145,4 @@
 - [Complete CI/CD with AWS CodeCommit, AWS CodeBuild, AWS CodeDeploy, and AWS CodePipeline](https://aws.amazon.com/blogs/devops/complete-ci-cd-with-aws-codecommit-aws-codebuild-aws-codedeploy-and-aws-codepipeline/)
 - [The Case For And Against Cognito](https://theburningmonk.com/2021/03/the-case-for-and-against-amazon-cognito/)
 - [CloudFormation Macro's](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html)
+- [The DynamoDB Book](https://www.dynamodbbook.com/)
