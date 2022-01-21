@@ -16,6 +16,7 @@
 ## Courses
 - ExamPro: https://app.exampro.co/student/material/dva-c01/1188
 - Stephane Mareek: https://www.udemy.com/course/aws-certified-developer-associate-dva-c01/learn/lecture/19733666?start=15#overview
+- Exam Questions: https://twitter.com/nealkdavis/status/1484468958090596358?s=20
 
 ## Concepts
 
