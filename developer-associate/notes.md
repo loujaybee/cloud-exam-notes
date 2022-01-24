@@ -13,6 +13,13 @@
 - Check out the other courses to see if anything is missing (ACloudGuru, Stephane Mareek, Cloud Academy)
 - Buy prep questions
 
+## Prep Plan
+- Monday AM - Run through main services you don’t know (EB) + do recap
+- Monday PM - Recap Lesser Known Services (Step Functions, API Gateway, Code*) + do recap
+- Tuesday AM - Networking services / VPC + do recap
+- Wednesday AM - Recap Least Known Services + do recap
+- Thursday AM/PM - Recap (Cheat Sheets, Flash Cards, Exam Questions, Practice Exam on ExamPro) + do recap
+
 ## Courses
 - ExamPro: https://app.exampro.co/student/material/dva-c01/1188
 - Stephane Mareek: https://www.udemy.com/course/aws-certified-developer-associate-dva-c01/learn/lecture/19733666?start=15#overview
@@ -26,6 +33,16 @@
 - Continuous Deployment: Code, Build, Integrate Test, Release, Deployment 
 
 ## Services
+
+### Elastic Beanstalk ([Docs](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html))
+- Not recommended for production applications
+- Fancy CloudFormation template
+- Go, Node.JS, Java, Python, Ruby, PHP (typically comes with the)
+- **Web** single instance environment (with ASG) w/ direct IP access vs load balanced **Worker** (With Queues)
+- Deployment policies: **all at once** deploy to all instances at the same time, **rolling** deploys to batches of existing services at a time, **rolling with additional batch** launch new servers, and terminate old servers (never reduce old capacity) **immutable** relies on the auto-scaling group by creating new instances, and re-pointing the ASG, rollback is done via swapping back, **blue/green** is swapped at the DNS (environment) level, not within the environment. 
+- You can use configurations to override default values in Elastic Beanstalk: `env.yml` sets the environment name, the solution stack, **Linux Server** which sets up your machine (an alternative to an AMI/Docker?)
+- **CLI** - view logs, create an environment
+- **Database** - Create an RDS database *inside* or *outside* elastic beanstalk. 
 
 ### Kinesis
 - Real time data streaming service (sharded streams)
@@ -125,6 +142,9 @@
 - Three components of CodeStar: Project dashboard, deployment pipeline, access management
 
 ## Questions
+- EB: Linux server configuration, why not Docker?
+- EB: What can you configure with the configuration files?
+- EB: Why is blue/green performed at the DNS level?
 - CT: How does the cross account trail work? It tracks other accounts? How? 
 - CT: How does log file validation work? Immutable log? 
 - CT: CloudTrail vs RedShift, what's the big difference? (Try it)
@@ -142,6 +162,8 @@
 - SF: When calling out to another service, how does it call back? Is that managed via the SDK? Or via something else?
 
 ## Hands On
+- EC2: Use session manager to log into EC2 server
+- EB: Download the EB CLI and use for AWS
 - DDB: Setup different indexes and query them
 - Cognito: Authenticate the user
 - CD: Use CodeDeploy to deploy EC2 instances
