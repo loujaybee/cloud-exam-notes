@@ -18,7 +18,9 @@
 - Monday PM - Recap Lesser Known Services (Step Functions, API Gateway, Code*) + do recap
 - Tuesday AM - Networking services / VPC + do recap
 - Wednesday AM - Recap Least Known Services + do recap
-- Thursday AM/PM - Recap (Cheat Sheets, Flash Cards, Exam Questions, Practice Exam on ExamPro) + do recap
+- Wednesday PM - Recap Least Known Services + do recap
+- Thursday AM - Cheat Sheets, Flash Cards, Exam Questions, Practice Exam on ExamPro, Review whitepapers
+- Thursday PM - Practice Exam on ExamPro + Jon Bonso
 
 ## Courses
 - ExamPro: https://app.exampro.co/student/material/dva-c01/1188
@@ -33,6 +35,19 @@
 - Continuous Deployment: Code, Build, Integrate Test, Release, Deployment 
 
 ## Services
+
+### VPC ([Docs](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html))
+- **Stats:** 5 VPC's per region (VPC's are regional, not AZ), 200 subnets per VPC
+- **Free:** (VPC, Route Table, NACL, Internet Gateway, Security Groups, Subnets, VPC Peering)
+- **Paid:** NAT Gateway, VPC endpoints, VPN gateway, customer gateways
+- **Default VPC:** Internet gateway, route table, 
+- `0.0.0.0/0` represents all possible routes
+- **VPC peering** - No overlapping CIDR blocks, no transitative peering, connects same accuonts and/or regions
+- **Internet gateway** - Allows VPC to access internet, provides a target in the route table for routable traffic, and/or performs NAT for instances assigned a public IPv4 address
+- **Bastion** - Should be deployed on a hardened image, however systems manager session manager is used instead of bastions in AWS
+- **Direct connect** - Is very fast, provides a dedicated network connection, which avoids the internet
+- **Security Groups** - Firewall at the instance level and provide port and protocol rules. 
+- **NACL** - Security groups are at the instance level, whilst NACL's are at the subnet level (a subnet has one NACL, one NACL can have many subnets) slight differences such as ALLOW vs DENY lists, and application of firewalls, NACL's allow blocking of IP ranges, not only port / protocol. 
 
 ### Elastic Beanstalk ([Docs](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html))
 - Not recommended for production applications
@@ -142,6 +157,7 @@
 - Three components of CodeStar: Project dashboard, deployment pipeline, access management
 
 ## Questions
+- VPC: Do you have to provision internet gateways? 
 - EB: Linux server configuration, why not Docker?
 - EB: What can you configure with the configuration files?
 - EB: Why is blue/green performed at the DNS level?
@@ -162,6 +178,8 @@
 - SF: When calling out to another service, how does it call back? Is that managed via the SDK? Or via something else?
 
 ## Hands On
+- Create your own Bastion in example corp (https://github.com/openupthecloud/example-corp)
+- Update example corp with networking (https://github.com/openupthecloud/example-corp)
 - EC2: Use session manager to log into EC2 server
 - EB: Download the EB CLI and use for AWS
 - DDB: Setup different indexes and query them
