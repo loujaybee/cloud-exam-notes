@@ -11,7 +11,6 @@
 - Update your imaginary business repo with some new services
   - Create an AWS diagram
 - Check out the other courses to see if anything is missing (ACloudGuru, Stephane Mareek, Cloud Academy)
-- Buy prep questions
 
 ## Prep Plan
 - Monday AM - Run through main services you don’t know (EB) + do recap
