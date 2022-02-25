@@ -25,21 +25,24 @@
 
 ### Developer Associate
 
-* [ Exam Prep ]()
-* [ Extra Reading ]()
-* [🔵 1 - Notes]()
-* [⭐️ 2 - Beginner IAM]()
-* [🔵 3 - EC2]()
-* [🔵 4 - S3]()
-* [⭐️ 5 - Serverless]()
-* [🔵 6 - DynamoDB]()
-* [⭐️ 7 - KMS and Encryption]()
-* [🔵 8 - Other AWS Services]()
-* [🔵 9 - Developer Theory]()
-* [⭐️ 10 - Advanced IAM]()
-* [🔵 11 - Monitoring]()
+* [  Exam Prep ](./developer-associate/exam-prep.md)
+* [  Practical Exercises ](./developer-associate/exam-prep.md)
+* [  Extra Reading ](./developer-associate/extra-reading.md)
+* [ ✅ Services ](./developer-associate/services.md)
 
-### Solutions Architect Associate
+### Kubernetes & Cloud Native Associate
+
+* [🔵 Notes ](./kcna/notes.md)
+
+### Well Architected
+
+* [🔵 1 - Being Well Architected]()
+* [️✅ 2 - The Framework](well-architected/the-framework.md)
+* [🔵 3 - The Framework At Work]()
+* [🔵 4 - Change is constant]()
+* [🔵 5 - Evaluating your design]()
+
+<!-- ### Solutions Architect Associate
 
 * [ Exam Prep ]()
 * [ Extra Reading ]()
@@ -104,17 +107,9 @@
 * [🔵 8 - Deployment & OPerations Management]()
 * [⭐️ 9 - Cost Management]()
 
-### Well Architected
-
-* [️✅ 1 - Being Well Architected]()
-* [️✅ 2 - The Framework](well-architected/the-framework.md)
-* [🔵 3 - The Framework At Work]()
-* [🔵 4 - Change is constant]()
-* [🔵 5 - Evaluating your design]()
-
 ### Docker Fundamentals (PRO)
 
-* — CURRICULM NEEDED —
+* — CURRICULM NEEDED — -->
 
 ### Key
 
