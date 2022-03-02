@@ -1,0 +1,12 @@
+## Hands On
+- Set up your own self-signed certificate
+- Network debugging (VPC flow logs)
+- Create your own Bastion in example corp (https://github.com/openupthecloud/example-corp)
+- Update example corp with networking (https://github.com/openupthecloud/example-corp)
+- EC2: Use session manager to log into EC2 server
+- EB: Download the EB CLI and use for AWS
+- DDB: Setup different indexes and query them
+- Cognito: Authenticate the user
+- CD: Use CodeDeploy to deploy EC2 instances
+- CB: Run a code build pipeline
+- SF: Create your own step-functions example project
