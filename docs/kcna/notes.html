@@ -595,34 +595,36 @@
 <li><a href="https://training.linuxfoundation.org/certification/kubernetes-cloud-native-associate/" target="_blank">Exam Guide</a></li>
 <li><a href="https://kubernetes.io/docs" target="_blank">Kubernetes Docs</a></li>
 </ul>
-<h2 id="plan">Plan</h2>
+<h1 id="plan">Plan</h1>
 <ul>
 <li>[ ] Buy the practice exams (Udemy)</li>
 <li>[ ] Initial pass of the Kubernetes Docs</li>
 <li>[ ] A run through of Kubernetes The Hard Way</li>
 </ul>
-<h2 id="content">Content</h2>
-<h3 id="kubernetes-fundamentals-46">Kubernetes Fundamentals (46%)</h3>
+<h1 id="kubernetes-fundamentals-46">Kubernetes Fundamentals (46%)</h1>
 <p><strong>Topics:</strong> Kubernetes Resources, Kubernetes Architecture, Kubernetes API, Containers, Scheduling</p>
 <p><strong>Basics:</strong> Service discovery and load balancing, self-healing, secrets management.</p>
 <p><strong>What it is not:</strong> CI/CD</p>
-<h3 id="kubernetes-objects-infra-as-code-reference"><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/" target="_blank">Kubernetes Objects</a> (infra as code reference)</h3>
+<h1 id="kubernetes-objects-infra-as-code-reference"><a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/" target="_blank">Kubernetes Objects</a> (infra as code reference)</h1>
 <ul>
 <li>Represent the state of your cluster. Your desired declarative end state. Most often provided via <code>kubectl</code> by passing a YAML file.</li>
 </ul>
-<p>Three methods of interacting:</p>
+<h2 id="methods-of-interacting-with-kubernetes-objects">Methods of interacting with Kubernetes objects</h2>
 <ol>
 <li><strong>Imperative</strong> - User interacts directly on live objects. User provides operations to the <code>kubectl</code> command as arguments or flags.</li>
 <li><strong>Imperative object</strong> - Apply changes given in a single file, but still specifies which operation (create / read / update / delete etc).</li>
 <li><strong>Declarative object configuration</strong> - Does not define the operation, nor the specific file, operates on full directory structures.</li>
 </ol>
-<h4 id="component-nodes">Component: <a href="https://kubernetes.io/docs/concepts/overview/components/#node-components" target="_blank">Nodes</a></h4>
+<h2 id="kubeconfig-file-access">Kubeconfig file access</h2>
+<h2 id="component-nodes">Component: <a href="https://kubernetes.io/docs/concepts/overview/components/#node-components" target="_blank">Nodes</a></h2>
 <p><em>Nodes are worker machines which host pods, where every cluster has at least 1 node.</em></p>
 <ul>
 <li>Node names are unique</li>
 <li>Kubelet can self-register with the API server</li>
 </ul>
-<p>Related node components:</p>
+<h3 id="node-authorisation">Node authorisation</h3>
+<p><a href="https://kubernetes.io/docs/reference/access-authn-authz/node/" target="_blank">https://kubernetes.io/docs/reference/access-authn-authz/node/</a></p>
+<h3 id="related-components">Related components</h3>
 <ul>
 <li><strong><a href="https://kubernetes.io/docs/reference/command-line-tools-reference/kubelet/" target="_blank">Kubelet</a></strong> <ul>
 <li>The agent running on a node, connects with apiserver. Makes sure that containers are running in a pod.</li>
@@ -635,10 +637,20 @@
 </li>
 <li><strong><a href="https://kubernetes.io/docs/setup/production-environment/container-runtimes/" target="_blank">container runtime</a></strong> <ul>
 <li>Software responsible for running containers (containerd, CRI-O).</li>
+<li>systemd generates and consumes a root control group and acts as a cgroup manager</li>
+<li>There is a <a href="https://medium.com/some-tldrs/tldr-understanding-the-new-control-groups-api-by-rami-rosen-980df476f633#:~:text=In%20cgroups%20v1%2C%20a%20process,only%20to%20a%20single%20subgroup." target="_blank">cgroup v1 and cgroup v2</a></li>
 </ul>
 </li>
 </ul>
-<h4 id="component-kubernetes-api">Component: <a href="https://kubernetes.io/docs/concepts/overview/kubernetes-api/" target="_blank">Kubernetes API</a></h4>
+<h2 id="component-pods">Component: <a href="https://kubernetes.io/docs/concepts/workloads/pods/" target="_blank">Pods</a></h2>
+<ul>
+<li>Smallest deployable units of compute that you can deploy in Kubernetes</li>
+<li>Shared storage and network resources (co-located, co-scheduled, run in shared context)</li>
+<li>Can include <a href="https://kubernetes.io/docs/concepts/workloads/pods/init-containers/" target="_blank">init</a> - These run before app containers in a pod.</li>
+<li>And <a href="https://kubernetes.io/docs/concepts/workloads/pods/ephemeral-containers/" target="_blank">ephemeral containers</a> - Used for inspecting running applicataions, rather than for running applications. They lack guarentees for completion, and are not automatically restarted. Useful when you can&apos;t exec into a container.</li>
+<li>&quot;User accounts&quot; are for humans, &quot;service accounts&quot; are for processes. User accounts are global, service accounts are namespaced. Pods created use the <code>default</code> &quot;service account&quot;.</li>
+</ul>
+<h2 id="component-kubernetes-api">Component: <a href="https://kubernetes.io/docs/concepts/overview/kubernetes-api/" target="_blank">Kubernetes API</a></h2>
 <ul>
 <li><p>Let&apos;s you query and manipulate the state of API objects in Kubernetes. Can be accessed through CLI commands such as <code>kubectl</code> and <code>kubeadm</code>, also has client libraries. </p>
 </li>
@@ -648,7 +660,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="other-components"><a href="https://kubernetes.io/docs/concepts/overview/components/" target="_blank">Other Components</a></h4>
+<h2 id="other-components"><a href="https://kubernetes.io/docs/concepts/overview/components/" target="_blank">Other Components</a></h2>
 <ul>
 <li><strong>etcd</strong> - Consistent, highly-available key/value store used as a backing store for cluster data. </li>
 <li><strong>kube-scheduler</strong> - Watches for newly created pods and selects nodes for them to run on. </li>
@@ -656,25 +668,26 @@
 <li><strong>cloud-controller-manager</strong> - Cloud specific control logic. When ran on-premise or on your computer you do not have this component. Executes as a single binary.</li>
 <li><strong>Addons</strong> - Such as cluster DNS, Web UI, container resource monitoring, cluster-level logging</li>
 </ul>
-<h3 id="container-orchestration-22">Container Orchestration (22%)</h3>
+<h1 id="container-orchestration-22">Container Orchestration (22%)</h1>
 <p><strong>Topics:</strong> Container Orchestration Fundamentals, Runtime, Security, Networking, Service Mesh, Storage</p>
-<h3 id="networking">Networking</h3>
+<h1 id="networking">Networking</h1>
+<h2 id="overview">Overview</h2>
 <ul>
 <li>Each pod gets it&apos;s own IP</li>
 <li>Kubernetes IP addresses exist at the <code>Pod</code> scope</li>
 <li>Containers within a <code>Pod</code> can all reach each other&apos;s ports on localhost</li>
 <li>Containers within a Pod must coordinate port usage, but this is no different from processes in a VM. </li>
 </ul>
-<h3 id="cloud-native-architecture-16">Cloud Native Architecture (16%)</h3>
+<h1 id="cloud-native-architecture-16">Cloud Native Architecture (16%)</h1>
 <p><strong>Topics:</strong> Autoscaling, Serverless, Community and Governance, Roles and Personas, Open Standards</p>
 <ul>
 <li><a href="https://landscape.cncf.io/" target="_blank">Cloud Native Landscape</a></li>
 </ul>
-<h3 id="cloud-native-observability-8">Cloud Native Observability (8%)</h3>
+<h1 id="cloud-native-observability-8">Cloud Native Observability (8%)</h1>
 <p><strong>Topics:</strong> Telemetry &amp; Observability, Prometheus, Cost Management</p>
-<h3 id="cloud-native-application-delivery-8">Cloud Native Application Delivery (8%)</h3>
+<h1 id="cloud-native-application-delivery-8">Cloud Native Application Delivery (8%)</h1>
 <p><strong>Topics:</strong> Application Delivery Fundamentals, GitOps, CI/CD</p>
-<h3 id="questions">Questions</h3>
+<h2 id="questions">Questions</h2>
 <ul>
 <li>Are things like canary deployments handled with plugins?</li>
 <li>Would you deploy databases from within Kubernetes?</li>
@@ -719,7 +732,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"🔵 Notes ","level":"5.1","depth":1,"next":{"title":"🔵 1 - Being Well Architected","level":"6.1","depth":1,"ref":"","articles":[]},"previous":{"title":" ✅ Services ","level":"4.4","depth":1,"path":"developer-associate/services.md","ref":"./developer-associate/services.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"kcna/notes.md","mtime":"2022-03-01T09:25:53.028Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-01T09:27:26.531Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"🔵 Notes ","level":"5.1","depth":1,"next":{"title":"🔵 1 - Being Well Architected","level":"6.1","depth":1,"ref":"","articles":[]},"previous":{"title":" ✅ Services ","level":"4.4","depth":1,"path":"developer-associate/services.md","ref":"./developer-associate/services.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"kcna/notes.md","mtime":"2022-03-02T08:18:51.033Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-02T08:20:08.583Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -8,23 +8,53 @@
 - [ ] Initial pass of the Kubernetes Docs
 - [ ] A run through of Kubernetes The Hard Way
 
+## Overview
+
+- [ ] Kubernetes Fundamentals
+  - [ ] Kubernetes Resources
+  - [ ] Kubernetes Architecture
+  - [ ] Kubernetes API
+  - [ ] Containers
+  - [ ] Scheduling
+- [ ] Container Orchestration
+  - [ ] Container Orchestration Fundamentals
+  - [ ] Runtime
+  - [ ] Security
+  - [ ] Networking
+  - [ ] Service Mesh
+  - [ ] Storage
+- [ ] Cloud Native Architecture
+  - [ ] Autoscaling
+  - [ ] Serverless
+  - [ ] Community and Governance
+  - [ ] Roles and Personas
+  - [ ] Open Standards
+- [ ] Cloud Native Observability
+  - [ ] Telemetry & Observability
+  - [ ] Prometheus
+  - [ ] Cost Management
+- [ ] Cloud Native Application Delivery
+  - [ ] Application Delivery Fundamentals
+  - [x] GitOps
+  - [x] CI/CD
+
 # Kubernetes Fundamentals (46%)
 **Topics:** Kubernetes Resources, Kubernetes Architecture, Kubernetes API, Containers, Scheduling
 
 **Basics:** Service discovery and load balancing, self-healing, secrets management.
 
-**What it is not:** CI/CD
+## Containers
 
-# [Kubernetes Objects](https://kubernetes.io/docs/concepts/overview/working-with-objects/) (infra as code reference)
+- Decouple applications from underlying host infrastructure
+
+## [Kubernetes Objects](https://kubernetes.io/docs/concepts/overview/working-with-objects/) (infra as code reference)
 
 - Represent the state of your cluster. Your desired declarative end state. Most often provided via `kubectl` by passing a YAML file.
 
-## Methods of interacting with Kubernetes objects
+### Methods of interacting with Kubernetes objects
 1. **Imperative** - User interacts directly on live objects. User provides operations to the `kubectl` command as arguments or flags.
 2. **Imperative object** - Apply changes given in a single file, but still specifies which operation (create / read / update / delete etc).
 3. **Declarative object configuration** - Does not define the operation, nor the specific file, operates on full directory structures.
-
-## Kubeconfig file access
 
 ## Component: [Nodes](https://kubernetes.io/docs/concepts/overview/components/#node-components)
 
@@ -64,16 +94,32 @@ https://kubernetes.io/docs/reference/access-authn-authz/node/
 - **[kube-apiserver](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-apiserver/)** 
   - Exposes the Kubernetes API.
 
-## [Other Components](https://kubernetes.io/docs/concepts/overview/components/)
+- **[kube-ctl](https://kubernetes.io/docs/reference/kubectl/)** 
+  - `kubectl config set-cluster` - 
 
-- **etcd** - Consistent, highly-available key/value store used as a backing store for cluster data. 
-- **kube-scheduler** - Watches for newly created pods and selects nodes for them to run on. 
-- **kube-controller-manager** - Runs controller processes. Each controller is a separate process, but are compiled into a single binary.
-- **cloud-controller-manager** - Cloud specific control logic. When ran on-premise or on your computer you do not have this component. Executes as a single binary.
+
+## [etcd](https://etcd.io/) 
+
+- [How etcd works with and without kubernetes](https://learnk8s.io/etcd-kubernetes)
+- Strongly consistent (must be strongly consistent, not eventual), highly-available (designed to be ran on many nodes, unlike SQL) key/value store used as a backing store for cluster data. Can be encrypted at rest. 
+
+## [Kube Scheduler](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-scheduler/)
+
+Watches for newly created pods and selects nodes for them to run on. Assigns pods to nodes
+
+## [Kube Controller Manager](https://kubernetes.io/docs/reference/command-line-tools-reference/kube-controller-manager/) and [Cloud Controller Manager](https://kubernetes.io/docs/concepts/architecture/cloud-controller/)
+
+**Kube controller manager** - Runs controller processes. Each controller is a separate process, but are compiled into a single binary.
+
+**cloud-controller-manager** - Cloud specific control logic. When ran on-premise or on your computer you do not have this component. Executes as a single binary.
+
+## [Other Components](https://kubernetes.io/docs/concepts/overview/components/)
 - **Addons** - Such as cluster DNS, Web UI, container resource monitoring, cluster-level logging
 
 # Container Orchestration (22%)
 **Topics:** Container Orchestration Fundamentals, Runtime, Security, Networking, Service Mesh, Storage
+
+
 
 # Networking
 
@@ -93,6 +139,14 @@ https://kubernetes.io/docs/reference/access-authn-authz/node/
 
 # Cloud Native Application Delivery (8%)
 **Topics:** Application Delivery Fundamentals, GitOps, CI/CD
+
+**GitOps**
+* CI/CD + IaC + Code Review
+* Push/Pull pipeline - push pipeline defines infra and has access to the environment, pull based syncs the source control with the cluster architecture
+* Pull based GitOps (the cluster has access to source control but doesn't expose credentials outside of the system)
+
+**OCI**
+* The `runtime-spec` and the `image-spec`
 
 ## Questions
 

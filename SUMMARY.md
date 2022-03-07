@@ -1,5 +1,12 @@
 * [ 🏠Home ](README.md)
 
+### Kubernetes & Cloud Native Associate
+
+* [🔵 Notes ](./kcna/notes.md)
+* [🔵 Kubernetes The Hard Way ](./kcna/kubernetes-the-hard-way.md)
+* [🔵 Practical Exercises ](./kcna/practical-exercises.md)
+* [🔵 Questions ](./kcna/questions.md)
+
 ### Cloud Practicioner
 
 * [ Exam Prep ](./cloud-practitioner/exam-prep.md)
@@ -29,10 +36,6 @@
 * [  Practical Exercises ](./developer-associate/exam-prep.md)
 * [  Extra Reading ](./developer-associate/extra-reading.md)
 * [ ✅ Services ](./developer-associate/services.md)
-
-### Kubernetes & Cloud Native Associate
-
-* [🔵 Notes ](./kcna/notes.md)
 
 ### Well Architected
 

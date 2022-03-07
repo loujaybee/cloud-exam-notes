@@ -5,4 +5,8 @@
 
 ## Architecture
 
-- 
+## CFSSL 
+
+`cfssl` is cloudflares PKI/TLS utility.
+`cfssljson` takes JSON output from `cfssl` and writes certificates, keys, CSR's and bundles to disk
+`.csr` extension (certificate signing request includes public key, company and domain name)
