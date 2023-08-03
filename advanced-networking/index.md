@@ -1,0 +1,33 @@
+- VPC has the larger block of addresses (CIDR block)
+- Private/Public resources
+    - Lots of services are private
+    - You can control the resources from the public console, but resources can be private
+- NACL (stateless firewalls, in and out traffic)
+    - Subnet level firewalls
+- Security Group
+    - Stateful firewall (traffic that leaves and returns)
+- Firewall (Stateful vs Stateless)
+    - Stateful connects in and outbound requests
+    - Stateless doesn’t connect inbound and outbound requests
+- VPC Peering links
+    - Are not transitive (can’t go via another VPC)
+- IAM
+    - Principal (person or application)
+- AWS Local Zone
+- Transit Gateway
+    - VPC peering
+    - Can be attached to VPN, Direct Connect
+- Amazon VPN (site-to-site)
+    - Customer Gateway deployed on the customer side
+    - Establish a connection between the on-prem customer gateway
+- AWS Wavelength Zone
+    - 
+- Virtual Gateway
+    - 
+- AWS Outposts
+    - Can run EC2, EBS, S3, VPC + RDS
+- VPN CloudHub
+    - Goes over the public internet
+- AWS Direct Connect Location
+    - Like a hopping point into AWS
+    - Can help improve performance (more expensive than VPN)
