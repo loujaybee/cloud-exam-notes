@@ -1,4 +1,24 @@
 
+## OSI + TCP/IP Model
+
+- Both models relate to each other. 
+- Each layer has a name and number. 
+
+**OSI (older, more detailed)**
+7. Application -> API interfaces.
+6. Presentation -> Old. Data Format.
+5. Session -> TCP/IP, Websockets.
+4. Transport -> Packets.
+3. Network -> IP Addresses. 
+2. Data Link -> Mac Address. Network Cards. Switches.
+1. Physical -> Cables.
+
+**TCP/IP (more modern, less detailed)**
+4. Application -> 
+3. Transport -> Assembly / Dissassembly. 
+2. Internet -> Routers + IP.
+1. Network Interface -> Physical Cabling. Harware.
+
 ## IP Addresses
 - Dual stack (runs both IPv4 and IPv6)
 - Single stack (runs only IPv4)
